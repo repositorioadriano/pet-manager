@@ -1,0 +1,16 @@
+= simple_form_for(@produto) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :marca
+    = f.input :grupo
+    = f.input :tipo
+    = f.input :peso
+    = f.input :preco_venda
+    = f.input :validade
+    = f.input :lote
+    = f.input :preco_compra
+
+  .form-actions
+    = f.button :submit

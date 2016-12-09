@@ -1,0 +1,42 @@
+
+- if @agendas.length > 0
+  %br
+  .panel.panel-primary
+    .panel-heading Agenda de Serviços
+    .panel-body
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Animal
+            %th Cliente
+            %th Serviço
+            %th Contato
+            %th Data Serviço
+            %th Horário
+            %th Status
+            %th Ações
+
+        %tbody
+          - @agendas.each do |agenda|
+            %tr
+              %td= agenda.animal.nome
+              %td= agenda.animal.cliente.nome
+              %td= agenda.servico.servico
+              %td= agenda.animal.cliente.celular
+              %td= l(agenda.data_agendamento, formats: :short)
+              %td= agenda.hora.strftime("%H:%M")
+              %td
+                - if agenda.status == "Confirmado"
+                  %span.label.label-success= agenda.status
+                - else
+                  %span.label.label-danger= agenda.status
+              %td= link_to 'Editar', edit_agenda_path(agenda), class:'btn-sm btn-info'
+              %td= link_to 'Cancelar', agenda, class:'btn-sm btn-danger', :method => :delete, :data => { :confirm => 'Deseja realmente cancelar esse agendamento?'}
+- else
+  %br
+  .alert.alert-info
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+    %strong Informação
+    Nenhum agendamento encontrado.
+
+= paginate @agendas

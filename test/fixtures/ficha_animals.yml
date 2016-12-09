@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_ultima_vacina: 2016-09-25
+  nome_vacina: MyString
+  data_proxima_vacina: 2016-09-25
+  nome_proxima_vacina: MyString
+  dose: 1.5
+
+two:
+  data_ultima_vacina: 2016-09-25
+  nome_vacina: MyString
+  data_proxima_vacina: 2016-09-25
+  nome_proxima_vacina: MyString
+  dose: 1.5

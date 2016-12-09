@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Descricao:
+  = @permissao.descricao
+
+= link_to 'Edit', edit_permissao_path(@permissao)
+\|
+= link_to 'Back', permissaos_path

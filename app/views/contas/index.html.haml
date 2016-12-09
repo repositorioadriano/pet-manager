@@ -1,0 +1,19 @@
+.panel.panel-primary
+  .panel-heading Contas Recebidas
+  .panel-body
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Cód. Agendamento
+          %th Serviço
+          %th Cliente
+          %th Data Serviço
+          %th Valor Recebido
+      %tbody
+        - @contas_recebers.each do |conta|
+          %tr
+            %td= conta.agenda_id
+            %td= conta.agenda.servico.servico
+            %td= conta.agenda.animal.cliente.nome
+            %td= conta.agenda.data_agendamento
+            %td= conta.valor

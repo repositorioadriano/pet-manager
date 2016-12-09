@@ -1,0 +1,30 @@
+- if @fornecedors.length > 0
+  .panel.panel-primary
+    .panel-heading Fornecedores
+    .panel-body
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Razão Social
+            %th Fantasia
+            %th CNPJ
+            %th Endereço
+            %th Telefone
+            %th Email
+
+        %tbody
+          - @fornecedors.each do |fornecedor|
+            %tr
+              %td= fornecedor.razao_social
+              %td= fornecedor.fantasia
+              %td= fornecedor.cnpj
+              %td= fornecedor.endereco
+              %td= fornecedor.telefone
+              %td= fornecedor.email
+              %td= link_to 'Editar', edit_fornecedor_path(fornecedor), class:'btn-sm btn-success'
+              %td= link_to 'Excluir', fornecedor, :method => :delete, class:'btn-sm btn-danger', :data => { :confirm => 'Are you sure?' }
+- else
+  .alert.alert-info
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+    %strong Informação
+    Nenhum fornecedor encontrado.

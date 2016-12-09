@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_agendamento: 2016-09-25
+  hora: 2016-09-25 14:25:38
+  entrada: MyString
+  saida: MyString
+  status: MyString
+
+two:
+  data_agendamento: 2016-09-25
+  hora: 2016-09-25 14:25:38
+  entrada: MyString
+  saida: MyString
+  status: MyString

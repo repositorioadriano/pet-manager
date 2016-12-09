@@ -1,0 +1,18 @@
+=simple_form_for(@agenda) do |f|
+  .row
+    .col-lg-4
+      .form-group
+        =f.association :servico, label_method: :servico, value_method: :id, prompt: "Selecione um serviço"
+    .col-lg-4
+      .form-group
+        =f.association :animal, label_method: :nome, value_method: :id, prompt: "Selecione um animal"
+    .col-lg-3
+      .form-group
+        =f.input :data_agendamento, label:'Data Serviço', as: :date, html5: true
+    .col-lg-4
+      .form-group
+        =f.input :status, collection: ['Confirmado', 'Cancelado'], prompt:'Selecione'
+    .col-lg-3
+      .form-group
+        =f.input :hora, label:'Hora Serviço', as: :time, html5: true
+  =f.button :submit, "Salvar", class:'btn btn-primary'

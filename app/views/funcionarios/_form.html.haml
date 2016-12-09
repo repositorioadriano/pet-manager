@@ -1,0 +1,32 @@
+= simple_form_for(@funcionario) do |f|
+  = f.error_notification
+  .row
+    .col-lg-4
+      .form-group
+        = f.input :nome, placeholder:'Nome'
+    .col-lg-4
+      .form-group
+        = f.input :funcao, label:'Função', placeholder:'Função'
+    .col-lg-4
+      .form-group
+        = f.input :endereco, label:'Endereço', placeholder:'Endereço'
+    .col-lg-4
+      .form-group
+        = f.input :bairro, placeholder:'Bairro'
+    .col-lg-4
+      .form-group
+        = f.input :cep, label:'CEP', placeholder:'CEP'
+    .col-lg-4
+      .form-group
+        = f.input :uf, label:'UF', placeholder:'Estado'
+    .col-lg-4
+      .form-group
+        = f.input :fone, placeholder:'Telefone'
+    .col-lg-4
+      .form-group
+        = f.input :celular, placeholder:'Celular'
+    .col-lg-4
+      .form-group
+        = f.input :email, placeholder:'Email'
+  .form-group
+    = f.button :submit, "Salvar", class:'btn btn-primary'

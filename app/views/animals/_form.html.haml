@@ -1,0 +1,21 @@
+=simple_form_for(@animal) do |f|
+  .row
+    .col-lg-6
+      .form-group
+        =f.input :nome
+    .col-lg-6
+      .form-group
+        =f.input :cor, collection: ['Branco', 'Preto', 'Marrom'], prompt:'Selecione'
+    .col-lg-6
+      .form-group
+        =f.input :raca, label:'Raça'
+    .col-lg-6
+      .form-group
+        =f.input :sexo, collection: ['Fêmea', 'Macho'], prompt:'Selecione'
+    .col-lg-6
+      .form-group
+        =f.association :cliente, label_method: :nome, value_method: :id
+    .col-lg-6
+      .form-group
+        =f.input :dt_nascimento, label:'Data Nascimento', as: :date, html5: true
+  =f.button :submit, "Salvar", class:'btn btn-primary'

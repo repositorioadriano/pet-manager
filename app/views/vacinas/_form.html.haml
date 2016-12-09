@@ -1,0 +1,6 @@
+=simple_form_for(@vacina) do |f|
+  .row
+    .col-lg-6
+      .form-group
+        =f.input :vacina, label:'Nome Vacina'
+  =f.button :submit, "Salvar", class:'btn btn-primary'

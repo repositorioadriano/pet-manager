@@ -1,0 +1,34 @@
+- if @funcionarios.length > 0
+  %br
+  .panel.panel-primary
+    .panel-heading Funcionários
+    .panel-body
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Nome
+            %th Função
+            %th Endereço
+            %th Bairro
+            %th Fone
+            %th Celular
+            %th Email
+
+        %tbody
+          - @funcionarios.each do |funcionario|
+            %tr
+              %td= funcionario.nome
+              %td= funcionario.funcao
+              %td= funcionario.endereco
+              %td= funcionario.bairro
+              %td= funcionario.fone
+              %td= funcionario.celular
+              %td= funcionario.email
+              %td= link_to 'Editar', edit_funcionario_path(funcionario), class:'btn-sm btn-success'
+              %td= link_to 'Excluir', funcionario, :method => :delete, class:'btn-sm btn-danger', :data => { :confirm => 'Are you sure?' }
+- else
+  %br
+  .alert.alert-info
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+    %strong Informação
+    Nenhum funcionário encontrado.

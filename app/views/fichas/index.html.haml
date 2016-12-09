@@ -1,0 +1,31 @@
+- if @fichas.length > 0
+  .panel.panel-primary
+    .panel-heading Fichas dos Animais
+    .panel-body
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Animal
+            %th Nome Vacina
+            %th Data Última Vacina
+            %th Data Próxima Vacina
+            %th Próxima Vacina
+            %th Dose
+            %th Ações
+
+        %tbody
+          - @fichas.each do |ficha|
+            %tr
+              %td= ficha.animal.nome
+              %td= ficha.nome_vacina
+              %td= ficha.data_ultima_vacina
+              %td= ficha.data_proxima_vacina
+              %td= ficha.nome_proxima_vacina
+              %td= ficha.dose
+              %td= link_to 'Editar', edit_ficha_path(ficha), class:'btn-sm btn-success'
+- else
+  %br
+  .alert.alert-info
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+    %strong Informação
+    Nenhuma ficha encontrada.

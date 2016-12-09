@@ -1,0 +1,33 @@
+= simple_form_for(@fornecedor) do |f|
+  = f.error_notification
+
+  .row
+    .col-lg-4
+      .form-group
+        = f.input :razao_social, label:'Razão Social'
+    .col-lg-4
+      .form-group
+        = f.input :fantasia
+    .col-lg-4
+      .form-group
+        = f.input :cnpj, label:'CNPJ'
+    .col-lg-4
+      .form-group
+        = f.input :endereco, label:'Endereço'
+    .col-lg-4
+      .form-group
+        = f.input :bairro
+    .col-lg-4
+      .form-group
+        = f.input :cidade
+    .col-lg-4
+      .form-group
+        = f.input :cep, label:'CEP'
+    .col-lg-4
+      .form-group
+        = f.input :telefone
+    .col-lg-4
+      .form-group
+        = f.input :email
+  .form-group
+    = f.button :submit, "Salvar", class:'btn btn-primary'

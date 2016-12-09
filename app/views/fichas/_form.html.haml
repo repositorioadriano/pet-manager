@@ -1,0 +1,21 @@
+=simple_form_for @ficha_animal, url: fichas_path do |f|
+  .row
+    .col-lg-6
+      .form-group
+        =f.input :nome_vacina, label:'Nome Vacina'
+    .col-lg-6
+      .form-group
+        =f.input :data_ultima_vacina, as: :date, html5: true
+    .col-lg-6
+      .form-group
+        =f.input :nome_proxima_vacina, label:'Próxima Vacina'
+    .col-lg-6
+      .form-group
+        =f.input :data_proxima_vacina, label:'Data Próxima Vacina', as: :date, html5: true
+    .col-lg-6
+      .form-group
+        =f.association :animal, label_method: :nome, value_method: :id, prompt: "Selecione um animal"
+    .col-lg-2
+      .form-group
+        =f.input :dose, label:'Dose'
+  =f.button :submit, "Salvar", class:'btn btn-primary'

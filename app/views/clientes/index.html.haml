@@ -1,0 +1,30 @@
+- if @clientes.length > 0
+  .panel.panel-primary
+    .panel-heading Clientes
+    .panel-body
+      .table-responsive
+        %table.table.table-striped
+          %thead
+            %tr
+              %th Nome
+              %th CPF
+              %th Telefone
+              %th Celular
+              %th Email
+              %th Ações
+          %tbody
+            - @clientes.each do |cliente|
+              %tr
+                %td= cliente.nome
+                %td= cliente.cpf
+                %td= cliente.telefone
+                %td= cliente.celular
+                %td= cliente.email
+                %td= link_to 'Editar', edit_cliente_path(cliente), class:'btn-sm btn-success'
+                %td= link_to 'Excluir', cliente, class:'btn-sm btn-danger', :method => :delete, :data => { :confirm => 'Deseja realmente excluir esse animal?' }
+- else
+  %br
+  .alert.alert-info
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+    %strong Informação
+    Nenhum cliente encontrado.

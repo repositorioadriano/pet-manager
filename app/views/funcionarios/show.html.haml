@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @funcionario.nome
+%p
+  %b Funcao:
+  = @funcionario.funcao
+%p
+  %b Endereco:
+  = @funcionario.endereco
+%p
+  %b Bairro:
+  = @funcionario.bairro
+%p
+  %b Cep:
+  = @funcionario.cep
+%p
+  %b Uf:
+  = @funcionario.uf
+%p
+  %b Login:
+  = @funcionario.login
+%p
+  %b Senha:
+  = @funcionario.senha
+%p
+  %b Fone:
+  = @funcionario.fone
+%p
+  %b Celular:
+  = @funcionario.celular
+%p
+  %b Email:
+  = @funcionario.email
+
+= link_to 'Edit', edit_funcionario_path(@funcionario)
+\|
+= link_to 'Back', funcionarios_path

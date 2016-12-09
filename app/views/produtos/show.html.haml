@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @produto.nome
+%p
+  %b Marca:
+  = @produto.marca
+%p
+  %b Grupo:
+  = @produto.grupo
+%p
+  %b Tipo:
+  = @produto.tipo
+%p
+  %b Peso:
+  = @produto.peso
+%p
+  %b Preco venda:
+  = @produto.preco_venda
+%p
+  %b Validade:
+  = @produto.validade
+%p
+  %b Lote:
+  = @produto.lote
+%p
+  %b Preco compra:
+  = @produto.preco_compra
+
+= link_to 'Edit', edit_produto_path(@produto)
+\|
+= link_to 'Back', produtos_path

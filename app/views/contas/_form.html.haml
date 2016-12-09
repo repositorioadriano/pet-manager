@@ -1,0 +1,9 @@
+=simple_form_for @contas_receber, url: contas_path do |f|
+  .row
+    .col-lg-6
+      .form-group
+        =f.association :agenda, label_method: :id, value_method: :id
+    .col-lg-6
+      .form-group
+        =f.input :valor
+  =f.button :submit, "Salvar", class:'btn btn-primary'

@@ -1,0 +1,37 @@
+=simple_form_for @cliente do |f|
+  .row
+    .col-lg-5
+      .form-group
+        =f.input :nome, label:'Nome'
+    .col-lg-3
+      .form-group
+        =f.input :cpf, label:'CPF'
+    .col-lg-3
+      .form-group
+        =f.input :dt_nascimento, label:'Data Nascimento', as: :date, html5: true
+    .col-lg-5
+      .form-group
+        =f.input :endereco, label:'Endereço'
+    .col-lg-3
+      .form-group
+        =f.input :bairro, label:'Bairro'
+    .col-lg-3
+      .form-group
+        =f.input :cep, label:'CEP'
+    .col-lg-3
+      .form-group
+        =f.input :cidade, label:'Cidade'
+    .col-lg-2
+      .form-group
+        =f.input :uf, label:'UF'
+    .col-lg-3
+      .form-group
+        =f.input :telefone, label:'Telefone'
+    .col-lg-3
+      .form-group
+        =f.input :celular, label:'Celular'
+    .col-lg-5
+      .form-group
+        =f.input :email, label:'Email'
+
+  =f.button :submit, "Salvar", class:'btn btn-primary'

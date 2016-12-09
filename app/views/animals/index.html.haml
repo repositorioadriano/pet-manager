@@ -1,0 +1,31 @@
+- if @animals.length > 0
+  .panel.panel-primary
+    .panel-heading Animais
+    .panel-body
+      .table-responsive
+        %table.table.table-striped
+          %thead
+            %tr
+              %th Nome
+              %th Cliente
+              %th Cor
+              %th Raça
+              %th Sexo
+              %th Ações
+          %tbody
+            - @animals.each do |animal|
+              %tr
+                %td= animal.nome
+                %td= animal.cliente.nome
+                %td= animal.cor
+                %td= animal.raca
+                %td= animal.sexo
+                %td= link_to 'Editar', edit_animal_path(animal), class:'btn-sm btn-success'
+                %td= link_to 'Excluir', animal, class:'btn-sm btn-danger', :method => :delete, :data => { :confirm => 'Deseja realmente excluir esse animal?' }
+
+- else
+  %br
+  .alert.alert-info
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+    %strong Informação
+    Nenhum animal encontrado.
